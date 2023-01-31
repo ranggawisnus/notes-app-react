@@ -1,5 +1,6 @@
 import React from 'react';
 import { showFormattedDate } from '../utils';
+import PropTypes from 'prop-types';
 
 function NoteItemHeader({ title, createdAt }) {
   return (
@@ -8,6 +9,11 @@ function NoteItemHeader({ title, createdAt }) {
       <p className='note-item__date'>{showFormattedDate(createdAt)}</p>
     </div>
   );
+}
+
+NoteItemHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
 }
 
 export default NoteItemHeader;
